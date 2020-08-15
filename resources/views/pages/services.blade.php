@@ -17,7 +17,7 @@
                     {{-- @component('components.who')
 
                     @endcomponent --}}
-                   This is Home Page
+                   This is Services Page
                 </div>
             </div>
         </div>
