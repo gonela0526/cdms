@@ -47,7 +47,7 @@
                     <ul class="nav nav-pills ml-auto  ">
 
                         <li class="nav-item  ">
-                            <a class="nav-link  {{ Request::is('home') ? 'active' : '' }}" href="{{route('home')}}">Home</a>
+                            <a class="nav-link  {{ Request::is(['home','/']) ? 'active' : '' }}" href="{{route('home')}}">Home</a>
                         </li>
                         <li class="nav-item  ">
                             <a class="nav-link  {{ Request::is('about') ? 'active' : '' }}" href="{{route('about')}}">About Us</a>
