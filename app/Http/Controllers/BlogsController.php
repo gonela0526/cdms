@@ -67,8 +67,10 @@ class BlogsController extends Controller
      * @param  \App\Blogs  $blogs
      * @return \Illuminate\Http\Response
      */
-    public function show(Blogs $blogs)
+    public function show($id)
     {
+        $blog =  Blogs::find($id);
+        return view('blog.show')->with('blog',$blog);
         
     }
 
@@ -78,7 +80,7 @@ class BlogsController extends Controller
      * @param  \App\Blogs  $blogs
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blogs $blogs)
+    public function edit( $id)
     {
         //
     }
@@ -90,7 +92,7 @@ class BlogsController extends Controller
      * @param  \App\Blogs  $blogs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blogs $blogs)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -101,7 +103,7 @@ class BlogsController extends Controller
      * @param  \App\Blogs  $blogs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blogs $blogs)
+    public function destroy($id)
     {
         //
     }
