@@ -35,3 +35,6 @@ Route::prefix('admin')->group(function () {
     Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
     Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 });
+
+
+//end of routes
