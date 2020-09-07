@@ -51,4 +51,9 @@ class Admin extends Authenticatable
     {
         $this->notify(new AdminResetPasswordNotification($token));
     }
+
+    public function blogs()
+    {
+        return $this->hasMany('App\Blogs');
+    }
 }

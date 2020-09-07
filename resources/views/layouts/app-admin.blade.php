@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'CodingMadness') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -43,7 +43,7 @@
                     <ul class="nav nav-pills ml-auto  ">
                         <!-- Authentication Links -->
                         <li class="nav-item  ">
-                            <a class="nav-link active" href="#">Home</a>
+                            <a class="nav-link active" href="{{url('/admin')}}">Dashboard</a>
                           </li>
                         @guest
                             <li class="nav-item">
@@ -55,6 +55,10 @@
                                 </li>
                             @endif
                         @else
+
+                        <li class="nav-item  ">
+                            <a class="nav-link " href="{{url('/admin/blogs/create')}}">Create Blog</a>
+                          </li>
                             <li class=" nav-item  dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -84,10 +88,16 @@
             </div>
         </nav>
 
+       
 
         <main class="py-4">
+            @include('components.messages')
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'editor' );
+    </script>
 </body>
 </html>

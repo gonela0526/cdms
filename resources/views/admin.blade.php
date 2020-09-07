@@ -13,8 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in as <strong>Admin</strong>!
+                    <p>You are logged in as <strong>Admin</strong>!</p>
+                    <a href="{{url('/admin/blogs/')}}" class="btn btn-primary">Blogs</a>
                 </div>
             </div>
         </div>
