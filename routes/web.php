@@ -19,6 +19,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/services', 'HomeController@services')->name('services');
+Route::resource('/blogs', 'BlogsController')->only(['index', 'show']);
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 Route::prefix('admin')->group(function () {

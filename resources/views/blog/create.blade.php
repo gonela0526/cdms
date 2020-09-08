@@ -8,19 +8,15 @@
             {{Form::label('title','Title')}}
             {{Form::text('title','',['class'=>'form-control','placeholder'=>'Title'])}}
         </div>
-        <div class="form-group">
-            {{Form::label('body','Body')}}
-            {{Form::textarea('body','',['id'=>'editor','class'=>'form-control','placeholder'=>'Body'])}}
-        </div>
-
+        
         <div class="form-group">
             {{Form::label('tags','Tags')}}
             {{Form::text('tags','',['class'=>'form-control','placeholder'=>'Tags'])}}
         </div>
 
-        {{-- <div class="form-group">
-            {{Form::file('cover_image')}}
-        </div> --}}
+        <div class="form-group">
+            {{Form::file('body_file')}}
+        </div>
 
         {{Form::submit('submit',['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}

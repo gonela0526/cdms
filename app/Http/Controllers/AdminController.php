@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Form;
+
+
 
 class AdminController extends Controller
 {
@@ -24,7 +25,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //echo Form::label('email', 'E-Mail Address'); die();
         return view('admin');
     }
 }

@@ -55,6 +55,9 @@
                         <li class="nav-item  ">
                             <a class="nav-link  {{ Request::is('services') ? 'active' : '' }}" href="{{route('services')}}">Services</a>
                         </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link  {{ Request::is('blog*') ? 'active' : '' }}" href="{{url('blogs')}}">Blogs</a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
