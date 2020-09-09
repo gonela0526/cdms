@@ -6,59 +6,27 @@
 
 
 
-
-    <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="/storage/images/images.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="/storage/images/images.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="/storage/images/images.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img class="card-img-top" src="/storage/images/images.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-
     @if (count($blogs)>0)
-        @foreach ($blogs as $blog)
 
-        <div class="card" >
-            <div class="card-body">
-              @if (Auth::guard('admin')->check())
-                <h5 class="card-title"> <a href="/admin/blogs/{{$blog->id}}">{{$blog->title}}</a></h5>
-              @else
-                <h5 class="card-title"> <a href="/blogs/{{$blog->id}}">{{$blog->title}}</a></h5>
-              @endif
-              <h6 class="card-subtitle mb-2 text-muted">Written on {{$blog->created_at}}</h6>
-            </div>
-          </div><br>
+    <div class="card-columns">
 
+       @foreach ($blogs as $blog)
+
+        <div class="card">
+          <img class="card-img-top" style = "height: 250px;" src="/storage/images/images.jpeg" alt="Card image cap">
+          <div class="card-body">
+            @if (Auth::guard('admin')->check())
+                  <h5 class="card-title"> <a href="/admin/blogs/{{$blog->id}}">{{$blog->title}}</a></h5>
+                @else
+                  <h5 class="card-title"> <a href="/blogs/{{$blog->id}}">{{$blog->title}}</a></h5>
+                @endif
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Written on {{$blog->created_at}} </small></p>
+          </div>
+        </div>
         @endforeach
-        {{$blogs->links()}}
+      </div>
+        {{$blogs->links()}} 
     @else    
       <p>No Blogs Found</p>
     @endif
