@@ -1,5 +1,9 @@
 @extends(Auth::guard('admin')->check() ? 'layouts.app-admin' : 'layouts.app')
-
+<style>
+  .pagination{
+    align-content: right;
+  }
+</style>
 @section('content')
 <div class="container">
     <h1>Blogs</h1>
@@ -25,9 +29,8 @@
           </div>
         </div>
         @endforeach
-      </div>
-        {{$blogs->links()}} 
-    @else    
+        {{$blogs->links()}}
+    @else
       <p>No Blogs Found</p>
     @endif
 </div>
